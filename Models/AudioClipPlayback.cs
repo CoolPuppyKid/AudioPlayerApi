@@ -52,12 +52,6 @@ public class AudioClipPlayback : IDisposable
     public bool IsStream { get; set; }
 
     /// <summary>
-    /// Gets or sets the <see cref="StreamPlayback"/> source that provides
-    /// the live audio stream data for this playback instance.
-    /// </summary>
-    public StreamPlayback StreamSource { get; set; }
-
-    /// <summary>
     /// Gets the name of the audio clip being played.
     /// </summary>
     public string Clip { get; }

@@ -248,33 +248,6 @@ public class AudioPlayer : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds a new live audio stream and registers it in the playback system.
-    /// </summary>
-    /// <param name="url">
-    /// The URL of the live audio stream to play.
-    /// </param>
-    /// <param name="name">
-    /// The name to associate with the stream. Defaults to "RadioStream" if not specified.
-    /// </param>
-    /// <returns>
-    /// A <see cref="StreamPlayback"/> instance representing the created live stream.
-    /// </returns>
-    public StreamPlayback AddLiveStream(string url, float volume = 1f, string name = "RadioStream")
-    {
-        var stream = new StreamPlayback(url, name);
-        int newId = GetNextId;
-
-        var wrapper = new AudioClipPlayback(newId, name, volume, true, false)
-        {
-            IsStream = true,
-            StreamSource = stream
-        };
-
-        ClipsById.Add(newId, wrapper);
-        return stream;
-    }
-
-    /// <summary>
     /// Removes clip by their identifier.
     /// </summary>
     /// <param name="clipId">The clip identifier.</param>
